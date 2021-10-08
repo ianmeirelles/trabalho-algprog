@@ -1,20 +1,21 @@
 #include <stdio.h>
-
 #define ML 6
 #define MC 5
-
-//Função que recebe 5 matrizes e e gera a imagem mental da soma delas
+ //Função que recebe 5 matrizes e e gera a imagem mental da soma delas
 void imagem_mental(int matriz1[][MC], int matriz2[][MC], int matriz3[][MC], int matriz4[][MC], int matriz5[][MC]) {
   int matrizP[ML][MC], i, j;
-  for(i=0;i<ML;i++){for(j=0;j<MC;j++){matrizP[i][j]=matriz1[i][j]+matriz2[i][j]+matriz3[i][j]+matriz4[i][j]+matriz5[i][j];}}
+  for(i=0;i<ML;i++){
+        for(j=0;j<MC;j++){
+            matrizP[i][j]=matriz1[i][j]+matriz2[i][j]+matriz3[i][j]+matriz4[i][j]+matriz5[i][j];
+         }
+  }
   for(i=0;i<ML;i++){
     printf("\t");
-    for(j=0;j<MC;j++){printf("%d", matrizP[i][j]);
+        for(j=0;j<MC;j++){printf("%d", matrizP[i][j]);
     }
     printf("\n");
   }
 }
-
 int main() {
   int matrizA1[ML][MC]={{0,1,1,1,0},{1,0,0,0,1},{1,0,0,0,1},{1,1,1,1,1},{1,0,0,0,1},{1,0,0,0,1}};
   int matrizA2[ML][MC]={{1,1,1,1,1},{1,0,0,0,1},{1,0,0,0,1},{1,1,1,1,1},{1,0,0,0,1},{1,0,0,0,1}};
@@ -41,10 +42,8 @@ int main() {
   int matrizU3[ML][MC]={{0,0,0,0,0},{0,1,0,1,0},{0,1,0,1,0},{0,1,0,1,0},{0,1,1,1,0},{0,0,0,0,0}};
   int matrizU4[ML][MC]={{0,0,0,0,0},{0,0,0,0,0},{0,1,0,1,0},{0,1,0,1,0},{0,1,0,1,0},{0,1,1,1,0}};
   int matrizU5[ML][MC]={{0,1,0,1,0},{0,1,0,1,0},{0,1,0,1,0},{0,1,1,1,0},{0,0,0,0,0},{0,0,0,0,0}};
-
   //As cinco vogais com 5 exemplos de cada
   printf("Imagens Mentais:\n");
-
   //Gerando as imagens mentais das cinco vogais
   printf("\nImagem Mental da letra A:\n\n");
   imagem_mental(matrizA1, matrizA2, matrizA3, matrizA4, matrizA5);
@@ -56,6 +55,5 @@ int main() {
   imagem_mental(matrizO1, matrizO2, matrizO3, matrizO4, matrizO5);
   printf("\nImagem Mental da letra U:\n\n");
   imagem_mental(matrizU1, matrizU2, matrizU3, matrizU4, matrizU5);
-  
   return 0;
 }
